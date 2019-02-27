@@ -1,6 +1,7 @@
 This is the Client Side of the Socket. In src/main/cpp/, there is a file called socket.cpp.
 The update() function in socket.cpp receives and returns strings from the server. Here is the server code:
 
+```
 
 std::string string_in(){
 	int angle_numerator = rand() % 1893;
@@ -63,7 +64,7 @@ int main()
 	memset(&servaddr, '0', sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_port = htons(5060);
-	servaddr.sin_addr.s_addr = /*inet_addr("127.0.0.1");*/ INADDR_ANY;
+	servaddr.sin_addr.s_addr = INADDR_ANY;
 	int baccept, servsock;
 	servsock = socket(AF_INET, SOCK_STREAM, 0);
 	int clientsock;
@@ -110,3 +111,5 @@ int main()
 		
 	}
 }
+
+```
